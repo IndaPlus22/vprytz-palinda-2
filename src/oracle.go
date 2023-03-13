@@ -123,7 +123,6 @@ func generateAnswer(question string, answers chan<- string) {
 
 // This is the oracle's secret algorithm.
 // It waits for a while and then sends a message on the answer channel.
-// TODO: make it better.
 func prophecy(question string, answer chan<- string) {
 	// Keep them waiting. Pythia, the original oracle at Delphi,
 	// only gave prophecies on the seventh day of each month.
