@@ -11,10 +11,10 @@ you should:
 
 [src/bug01.go](src/bug01.go)
 
-**Answer**:
+**Answer**: The program is buggy because the `main` function declares an unbuffered channel `ch`, meaning that the sender is stuck waiting for a reciever to read from the channel. My solution to the bug is to make the channel buffered, so that the sender is not blocked.
 
 ## Buggy program 2
 
 [src/bug02.go](src/bug02.go)
 
-**Answer**:
+**Answer**: The program is buggy because the `main` function (thread) exits before the `Print` function has finished reading from the channel. My solution to the bug is to implement a `WaitGroup` to ensure that the `Print` function has finished reading from the channel before the main thread exits.
